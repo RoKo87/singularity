@@ -5,4 +5,14 @@ img {
 
 .btn.home {
     background-color: gray;    
+    padding: 30px;
+}
+
+.m-auto {
+    width: auto;
+    margin: auto;
+}
+
+.top-section {
+    height: 50px;
 }
