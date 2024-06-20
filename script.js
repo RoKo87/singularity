@@ -47,13 +47,20 @@ function createBubbleWithDelay(date, delay) {
     }, delay);
 }
 
+ // Function to reset bubble position at the bottom with a random x-coordinate
+ function resetBubblePosition(bubble) {
+    bubble.style.bottom = `${getRandomNumber(-30, -300)}px`; // Start from a random position at the bottom
+    bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`; // Randomize x-coordinate
+}
+
+
 // Function to animate a single bubble moving up
 function animateBubble(bubble) {
     const speed = getRandomNumber(1, 3); // Randomize speed
     const interval = setInterval(() => {
         const currentBottom = parseInt(bubble.style.bottom);
         if (currentBottom >= window.innerHeight) {
-            bubble.style.bottom = `${getRandomNumber(-30, -300)}px`; // Reset bubble position off-screen
+            resetBubblePosition(bubble); // Reset bubble position if it goes out of viewport
         } else {
             bubble.style.bottom = `${currentBottom + speed}px`;
         }
