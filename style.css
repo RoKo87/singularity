@@ -43,8 +43,9 @@ a {
     width: 70px;
     height: 30px;
     border-radius: 20px;
-    font-family: Inter;
-    font-weight: bold;
+
+    /* font-family: Arial; */
+    font-weight: normal;
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -52,6 +53,11 @@ a {
     color: #333;
     pointer-events: none; 
     transition: transform 0.5s ease;
+}
+
+.bubble:hover {
+    font-weight: bold;
+    font-size: 19px;
 }
 
 /* ################################################################ */
@@ -70,20 +76,39 @@ a {
 .button-section.home {
     height: auto;
 }
+
+/* top section */
+.top-section.home {
+    height: 100px;
+}
+/* title section */
+.title-text-section.home {
+    height: 300px;
+}
+/* buttons section */
+.button-section.home {
+    height: auto;
+}
 .btn.home {
     background-color: gray;    
-    padding: 75px;
+
+    padding: 45px;
     width: 100%;
     height: 100%;
     border: 1px solid white;
-    color: black;
-    text-shadow: 2px 2px white;
+    color: white;
+    text-shadow: 2px 2px black;
     border-radius: 20px;
+    font-size: 25px;
     transition: 0.5s ease;
 }
 .btn.home:hover {
     box-shadow: 1px 1px black;
     background-color: darkgray;
+    font-size: 30px;
+    padding: 40px;
+    text-shadow: 2px 2px royalblue;
+    font-weight: bold;
 }
 
 /* news section */
@@ -169,4 +194,26 @@ a {
 /* head section */
 .head-section.profile {
     max-height: 75px !important;
+
 }
+
+.container-fluid {
+    height: 100vh;
+    width: 100%;
+}
+
+
+/* 
+@font-face {
+    font-family: "Inter";
+    src: url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.svg#Inter")format("svg");
+    src: url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.svg#Inter Bold")format("svg");
+} */

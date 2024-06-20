@@ -1,18 +1,24 @@
 // the dates
-const datesList = [
-    "Jan 2024",
-    "Feb 2024",
-    "Mar 2024",
-    "Apr 2024",
-    "May 2024",
-    "Jun 2024",
-    "Jul 2024",
-    "Aug 2024",
-    "Sep 2024",
-    "Oct 2024",
-    "Nov 2024",
-    "Dec 2024"
+const allpossDates = [];
+
+//initializing the months
+const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
+
+//initializing the years
+const years = []
+const currentYear = new Date().getFullYear();
+for (var i = currentYear; i < currentYear + 50; i++) {
+    years.push(i);
+}
+
+//filling in the possible dates
+for (var i = 0; i < years.length; i++) {
+    for (var j = 0; j < 12; j++) {
+        allpossDates.push(months[j]+" "+years[i]);
+    }
+}
 
 //randomizing array function
 function shuffleArray(array) {
@@ -33,15 +39,18 @@ function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
 
+var activeBubs = 0;
+
 //bubble creating function
-function createBubble(date, delay) {
+function createBubble() {
     setTimeout(() => {
 
         //creates the div
-        const bubble = document.createElement('div');
+        const bubble = document.createElement('bubble');
+
         
         //adds date to div
-        bubble.textContent = date;
+        bubble.textContent = allpossDates[Math.floor(Math.random()*allpossDates.length)];
 
         //adds css to dic
         bubble.classList.add('bubble');
@@ -50,7 +59,7 @@ function createBubble(date, delay) {
         bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
         
         //stagering bubbles
-        bubble.style.bottom = `${0}px`; // Start bubbles off-screen
+        bubble.style.bottom = `${getRandomNumber(-300, -600)}px`; // Start bubbles off-screen
         
         //adding bubble to the background
         document.querySelector('.background').appendChild(bubble);
@@ -58,14 +67,16 @@ function createBubble(date, delay) {
         // animating bubble
         animateBubble(bubble);
 
-    }, delay); //delaying bubbles
+
+    }, 1000); //delaying bubbles
 }
 
 //reset bubble x-coordinate
  function resetBubblePosition(bubble) {
 
     //stagering bubbles
-    bubble.style.bottom = `${0}px`; 
+=======
+    bubble.style.bottom = `${getRandomNumber(-30, -900)}px`; 
 
     //randomizing the x-coordinate
     bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
@@ -85,18 +96,19 @@ function animateBubble(bubble) {
         if (currentBottom >= window.innerHeight) {
             resetBubblePosition(bubble); //resets bubble's x-coordinate once it floats up once
             speed  = getRandomNumber(1, 3);
+            if (activeBubs > 0) { 
+                activeBubs--;
+            }
         } else {
+            if (currentBottom > 0 && currentBottom < speed) {
+                activeBubs++;
+            }
             bubble.style.bottom = `${currentBottom + speed}px`; //moves bubble
         }
     }, 10); //time b/w movement
 }
 
-//initizlizes array of bubbles
-shuffleArray(datesList).forEach((date, index) => {
-    
-    //calcs delay for bubble
-    const delay = index * 1000;
 
-    //creates bubble
-    createBubble(date, delay);
-});
+for (i = 0; i < 10; i++) {
+    createBubble();
+}
