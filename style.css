@@ -18,6 +18,8 @@ a {
 /* ################################################################ */
 /* ####################### BACKGROUND STUFF ####################### */
 /* ################################################################ */
+
+/* background  */
 .background.home {
     position: absolute;
     top: 0;
@@ -25,11 +27,13 @@ a {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: #f0f0f0; /* Background color */
+    background-color: #f0f0f0;
 }
+
+/* bubbles stuff */
 .bubble {
     position: absolute;
-    background-color: cornflowerblue; /* Bubble color with transparency */
+    background-color: cornflowerblue; 
     width: 70px;
     height: 30px;
     border-radius: 20px;
@@ -39,9 +43,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333; /* Text color */
-    pointer-events: none; /* Ignore mouse events on bubbles */
-    transition: transform 0.5s ease; /* Transition effect for animation */
+    color: #333;
+    pointer-events: none; 
+    transition: transform 0.5s ease;
 }
 
 /* ################################################################ */

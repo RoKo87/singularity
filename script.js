@@ -1,3 +1,4 @@
+// the dates
 const datesList = [
     "Jan 2024",
     "Feb 2024",
@@ -13,10 +14,10 @@ const datesList = [
     "Dec 2024"
 ];
 
+//randomizing array function
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) { 
    
-        // Generate random number 
         var j = Math.floor(Math.random() * (i + 1));
                    
         var temp = array[i];
@@ -27,49 +28,75 @@ function shuffleArray(array) {
     return array;
  }
 
-// Function to generate a random number between min and max inclusive
+//random num generator function
 function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-// Function to create a bubble element with a delay
-function createBubbleWithDelay(date, delay) {
+//bubble creating function
+function createBubble(date, delay) {
     setTimeout(() => {
+
+        //creates the div
         const bubble = document.createElement('div');
+        
+        //adds date to div
         bubble.textContent = date;
+
+        //adds css to dic
         bubble.classList.add('bubble');
+
+        //bubble x-coordinate
         bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
+        
+        //stagering bubbles
         bubble.style.bottom = `${getRandomNumber(-30, -300)}px`; // Start bubbles off-screen
+        
+        //adding bubble to the background
         document.querySelector('.background').appendChild(bubble);
 
-        // After adding bubble, start animation
+        // animating bubble
         animateBubble(bubble);
-    }, delay);
+
+    }, delay); //delaying bubbles
 }
 
- // Function to reset bubble position at the bottom with a random x-coordinate
+//reset bubble x-coordinate
  function resetBubblePosition(bubble) {
-    bubble.style.bottom = `${getRandomNumber(-30, -300)}px`; // Start from a random position at the bottom
-    bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`; // Randomize x-coordinate
+
+    //stagering bubbles
+    bubble.style.bottom = `${getRandomNumber(-30, -300)}px`; 
+
+    //randomizing the x-coordinate
+    bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
 }
 
-
-// Function to animate a single bubble moving up
+//animating the bubble
 function animateBubble(bubble) {
-    const speed = getRandomNumber(1, 3); // Randomize speed
+
+    //getting speed value
+    var speed = getRandomNumber(1, 3);
+
+    //bubble animation loop
     const interval = setInterval(() => {
+
+        //the bubble current y-coordinate
         const currentBottom = parseInt(bubble.style.bottom);
         if (currentBottom >= window.innerHeight) {
-            resetBubblePosition(bubble); // Reset bubble position if it goes out of viewport
+            resetBubblePosition(bubble); //resets bubble's x-coordinate once it floats up once
+            speed  = getRandomNumber(1, 3);
         } else {
-            bubble.style.bottom = `${currentBottom + speed}px`;
+            bubble.style.bottom = `${currentBottom + speed}px`; //moves bubble
         }
-    }, 10); // Adjust animation smoothness
+    }, 10); //time b/w movement
 }
 
-// Initialize bubbles with staggered delays
+//initizlizes array of bubbles
 shuffleArray(datesList).forEach((date, index) => {
-    // Calculate delay for each bubble (adjust as needed)
-    const delay = index * 1000; // 1000 milliseconds = 1 second
-    createBubbleWithDelay(date, delay);
+    
+    //calcs delay for bubble
+    const delay = index * 1000;
+
+    //creates bubble
+    createBubble(date, delay);
 });
