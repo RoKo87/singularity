@@ -11,11 +11,13 @@ img {
     border: 1px solid white;
     color: white;
     text-shadow: 2px 2px black;
+    border-radius: 20px;
+    transition: 0.5s ease;
 }
 
 .btn.home:hover {
     box-shadow: 3px 3px black;
-    transition: 0.5s ease;
+
     background-color: darkgray;
 }
 
@@ -33,5 +35,28 @@ img {
 }
 
 .button-section.home {
-    height: 100px;
+    height: auto;
+}
+
+.news-section.home {
+    height: auto;
+}
+
+.news-section-header.home {
+    height: 10%;
+    position: relative;
+}
+
+.news-section-header-title.home {
+    background-color: cornflowerblue;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+
+.news-section-body.home {
+    height: 95%;
+    position: absolute;
+    bottom: 0;
+    /* border: 1px solid black; */
 }
