@@ -1,6 +1,36 @@
+/* ################################################################ */
+/* ########################## MAIN STUFF ########################## */
+/* ################################################################ */
+
+/* main stuff */
 img {
     width: 100%;
     height: auto;
+}
+
+.m-auto {
+    width: auto;
+    margin: auto;
+}
+
+/* ################################################################ */
+/* ######################## HOMEPAGE STUFF ######################## */
+/* ################################################################ */
+
+/* top section */
+.top-section.home {
+    height: 100px;
+}
+
+/* title section */
+.title-text-section.home {
+    height: 400px;
+}
+
+/* buttons section */
+.button-section.home {
+    height: auto;
+
 }
 
 .btn.home {
@@ -17,34 +47,18 @@ img {
 
 .btn.home:hover {
     box-shadow: 3px 3px black;
-
     background-color: darkgray;
 }
 
-.m-auto {
-    width: auto;
-    margin: auto;
-}
-
-.main-text-section.home {
-    height: 400px;
-}
-
-.top-section.home {
-    height: 100px;
-}
-
-.button-section.home {
-    height: auto;
-}
-
+/* news section */
 .news-section.home {
-    height: auto;
+    height: 500px;
+    position: relative;
 }
 
 .news-section-header.home {
     height: 10%;
-    position: relative;
+
 }
 
 .news-section-header-title.home {
@@ -53,10 +67,15 @@ img {
     border-radius: 25px;
 }
 
-
 .news-section-body.home {
     height: 95%;
+    width: 100%;
     position: absolute;
     bottom: 0;
-    /* border: 1px solid black; */
+    border: 1px solid black;
+    margin: auto;
 }
+
+/* ################################################################ */
+/* ################################################################ */
+/* ################################################################ */
