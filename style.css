@@ -14,6 +14,36 @@ img {
 a {
     all: unset;
 }
+
+/* ################################################################ */
+/* ####################### BACKGROUND STUFF ####################### */
+/* ################################################################ */
+.background.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #f0f0f0; /* Background color */
+}
+.bubble {
+    position: absolute;
+    background-color: cornflowerblue; /* Bubble color with transparency */
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Text color */
+    pointer-events: none; /* Ignore mouse events on bubbles */
+    transition: transform 0.5s ease; /* Transition effect for animation */
+}
+
 /* ################################################################ */
 /* ######################## HOMEPAGE STUFF ######################## */
 /* ################################################################ */
