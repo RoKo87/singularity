@@ -82,6 +82,7 @@ img {
 .news-section-body-item.home {
     border-left: 1px solid black;
     padding: 15px;
+    height: auto;
 }
 .news-section-body-item.home:first-child {
     border-left: none;
@@ -91,7 +92,9 @@ img {
     font-weight: bold;
     text-align: center;
 }
-
+.news-section-body-item-text.home {
+    height: 70%;
+}
 /* ################################################################ */
 /* ################################################################ */
 /* ################################################################ */
