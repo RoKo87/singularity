@@ -43,6 +43,7 @@ a {
     width: 70px;
     height: 30px;
     border-radius: 20px;
+
     /* font-family: Arial; */
     font-weight: normal;
     font-size: 12px;
@@ -76,8 +77,21 @@ a {
     height: auto;
 }
 
+/* top section */
+.top-section.home {
+    height: 100px;
+}
+/* title section */
+.title-text-section.home {
+    height: 300px;
+}
+/* buttons section */
+.button-section.home {
+    height: auto;
+}
 .btn.home {
     background-color: gray;    
+
     padding: 45px;
     width: 100%;
     height: 100%;
@@ -180,6 +194,7 @@ a {
 /* head section */
 .head-section.profile {
     max-height: 75px !important;
+
 }
 
 .container-fluid {

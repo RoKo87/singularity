@@ -75,6 +75,7 @@ function createBubble() {
  function resetBubblePosition(bubble) {
 
     //stagering bubbles
+=======
     bubble.style.bottom = `${getRandomNumber(-30, -900)}px`; 
 
     //randomizing the x-coordinate
@@ -106,6 +107,7 @@ function animateBubble(bubble) {
         }
     }, 10); //time b/w movement
 }
+
 
 for (i = 0; i < 10; i++) {
     createBubble();
