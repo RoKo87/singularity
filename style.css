@@ -68,19 +68,17 @@ a {
 .top-section.home {
     height: 100px;
 }
+
 /* title section */
 .title-text-section.home {
     height: 300px;
+    max-width: 1250px;
 }
 /* buttons section */
 .button-section.home {
     height: auto;
 }
 
-/* top section */
-.top-section.home {
-    height: 100px;
-}
 /* title section */
 .title-text-section.home {
     height: 300px;
