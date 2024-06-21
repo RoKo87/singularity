@@ -93,7 +93,7 @@ function createBubble() {
 function animateBubble(bubble) {
 
     //getting speed value
-    var speed = getRandomNumber(2, 6);
+    var speed = getRandomNumber(1, 5);
 
     //bubble animation loop
     const interval = setInterval(() => {
@@ -104,7 +104,7 @@ function animateBubble(bubble) {
             resetBubblePosition(bubble); //resets bubble's x-coordinate once it floats up once
             if (activeBubs > 0) { 
                 activeBubs--;
-                speed  = getRandomNumber(2, 6);
+                speed  = getRandomNumber(1, 5);
             }
         } else {
             if (currentBottom > 0 && currentBottom < speed) {
@@ -112,7 +112,7 @@ function animateBubble(bubble) {
             }
             bubble.style.bottom = `${currentBottom + speed}px`; //moves bubble
         }
-    }, 25); //time b/w movement
+    }, 10); //time b/w movement
 }
 
 
