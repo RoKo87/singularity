@@ -22,20 +22,52 @@
     <div class="container-fluid">
 
             <!-- logo section -->
-            <div class="row logo-section profile">
+            <div class="row logo-section profile m-auto pt-5">
                     <div class="col text-center">
                             <!-- logo -->
-                            <img src="logo2.png" alt="">
+                            <img src="logo2.png" alt="singularity-logo">
                     </div>  
             </div>
 
-
-            <div class="row head-section profile">
-                    <div class="col-md-5 col-sm-4 col-3"></div>
-                    <div class="col-md-2 col-sm-4 col-6">
-                        <img width="75" height="75" src="https://img.icons8.com/ios-glyphs/300/000000/user-male-circle.png" alt="user-circle"/>
+            <!-- profile symbol -->
+            <div class="row head-section profile m-auto">
+                    <div class="col">
+                        <!-- profile symbol -->
+                        <img src="https://img.icons8.com/ios-glyphs/300/000000/user-male-circle.png" alt="user-circle"/>
                     </div>
-                    <div class="col-md-5 col-sm-4 col-3"></div>
+            </div>
+
+            <!-- line -->
+            <hr class="line profile m-auto pt-3">
+
+            <!-- name section -->
+            <div class="row name-section profile">
+                <div class="col text-center">
+                        <b><h1>Name Text</h1></b>
+                </div>
+            </div>
+
+            <!-- main section 1 -->
+            <div class="main1-section profile m-auto">
+                <!-- description -->
+                <div class="col-6">
+                        <b>Description</b>
+                        <div class="description-section profile">
+                                <textarea id="description-profile" class="description profile" rows="5" placeholder="Edit description..." required></textarea>
+                        </div>
+
+                        <div>
+
+                               <button class="description-button profile" onclick="saveDescription('description-profile')"> Save </button>
+                                <button class="description-button profile"  onclick="resetDescription()"> Reset </button>
+                        
+
+                        </div>
+                </div>
+
+                <div class="col-6">
+
+                </div>
             </div>
 
     </div>
