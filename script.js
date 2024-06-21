@@ -72,7 +72,7 @@ function createBubble() {
         bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
         
         //stagering bubbles
-        bubble.style.bottom = `${0}px`; // Start bubbles off-screen
+        bubble.style.bottom = `${getRandomNumber(-30, -300)}px`; // Start bubbles off-screen
         
         //adding bubble to the background
         document.querySelector('.background').appendChild(bubble);
