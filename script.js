@@ -59,7 +59,7 @@ function createBubble() {
         bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
         
         //stagering bubbles
-        bubble.style.bottom = `${getRandomNumber(-300, -600)}px`; // Start bubbles off-screen
+        bubble.style.bottom = `${0}px`; // Start bubbles off-screen
         
         //adding bubble to the background
         document.querySelector('.background').appendChild(bubble);
@@ -76,7 +76,7 @@ function createBubble() {
 
     //stagering bubbles
 
-    bubble.style.bottom = `${getRandomNumber(-30, -900)}px`; 
+    bubble.style.bottom = `${0}px`; 
 
     //randomizing the x-coordinate
     bubble.style.left = `${getRandomNumber(0, window.innerWidth - 30)}px`;
@@ -86,7 +86,7 @@ function createBubble() {
 function animateBubble(bubble) {
 
     //getting speed value
-    var speed = getRandomNumber(1, 3);
+    var speed = getRandomNumber(2, 6);
 
     //bubble animation loop
     const interval = setInterval(() => {
@@ -95,9 +95,9 @@ function animateBubble(bubble) {
         const currentBottom = parseInt(bubble.style.bottom);
         if (currentBottom >= window.innerHeight) {
             resetBubblePosition(bubble); //resets bubble's x-coordinate once it floats up once
-            speed  = getRandomNumber(1, 3);
             if (activeBubs > 0) { 
                 activeBubs--;
+                speed  = getRandomNumber(2, 6);
             }
         } else {
             if (currentBottom > 0 && currentBottom < speed) {
@@ -105,10 +105,10 @@ function animateBubble(bubble) {
             }
             bubble.style.bottom = `${currentBottom + speed}px`; //moves bubble
         }
-    }, 10); //time b/w movement
+    }, 25); //time b/w movement
 }
 
 
-for (i = 0; i < 10; i++) {
+for (i = 0; i < 15; i++) {
     createBubble();
 }
