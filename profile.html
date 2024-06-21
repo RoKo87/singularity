@@ -17,28 +17,77 @@
 
 </head>
 
-<body>  
+<body class="content">  
     <!-- main container -->
     <div class="container-fluid">
 
+
+        <div class="row settings-section profile">
+                <div class="col profile" style="display: flex; justify-content: center; align-items: center;"><a href=""><img src="https://img.icons8.com/ios-glyphs/30000/000000/settings--v1.png" alt="settings--v1"/></a></div>
+        </div>
+
             <!-- logo section -->
-            <div class="row logo-section profile">
+            <div class="row logo-section profile m-auto pt-5" style="padding-left:50px;">
                     <div class="col text-center">
                             <!-- logo -->
-                            <h1 style="transform:rotate(15deg);">logo-text</h1>
+                            <img src="logo2.png" alt="singularity-logo">
+
+
                     </div>  
             </div>
 
-
-            <div class="row head-section profile">
-                    <div class="col-md-5 col-sm-4 col-3"></div>
-                    <div class="col-md-2 col-sm-4 col-6">
-                        <img width="75" height="75" src="https://img.icons8.com/ios-glyphs/300/000000/user-male-circle.png" alt="user-circle"/>
+            <!-- profile symbol -->
+            <div class="row head-section profile m-auto">
+                    <div class="col">
+                        <!-- profile symbol -->
+                        <img src="https://img.icons8.com/ios-glyphs/300/000000/user-male-circle.png" alt="user-circle"/>
                     </div>
-                    <div class="col-md-5 col-sm-4 col-3"></div>
+            </div>
+
+            <!-- line -->
+            <hr class="line profile m-auto pt-3">
+
+            <!-- name section -->
+            <div class="row name-section profile">
+                <div class="col text-center">
+                        <b><h1>Name Text</h1></b>
+                </div>
+            </div>
+
+            <!-- main section 1 -->
+            <div class="row main1-section profile m-auto">
+                                <!-- description -->
+                                <div class="col-6">
+                                        <!-- description input -->
+                                        <div><b>Description</b></div>
+                                        <div class="description-section profile">
+                                                <textarea id="description-profile" class="description profile" rows="5" placeholder="Edit description..." required></textarea>
+                                        </div>
+                                        <!-- buttons -->
+                                        <div>
+                                                <button class="description-button profile" onclick="saveDescription('description-profile')"> Save </button>
+                                                <button class="description-button profile"  onclick="resetDescription()"> Reset </button>
+                                        </div>
+                                </div>
+                                <!-- friends -->
+                                <div class="col-6">
+                                        <div style="text-align: right;"><b>Friends</b></div>
+                                        <div class="friends-section profile"></div>
+
+                                        <div style="padding-top: 6px; display:flex; justify-content:flex-end; gap: 5px;">
+                                                <button class="description-button profile"> Add </button>
+                                                <button class="description-button profile"> Remove </button>
+                                        </div>
+                        </div>
+            </div>
+
+            <div class="row main2-section profile m-auto pt-5">
+                <div class="guess-title profile"><b>Guesses</b> <button class="expand-guess-button profile" onclick="expand(event,'guesses')"><img class="m-auto" src="https://img.icons8.com/ios-glyphs/300/000000/plus-math.png" alt="plus-math"/></button></div>
+
+                <div id="guesses" class="col guess-section profile"></div>
             </div>
 
     </div>
-
+ 
 </body>
 </html>

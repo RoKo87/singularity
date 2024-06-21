@@ -3,16 +3,36 @@
 /* ################################################################ */
 
 /* main stuff */
+
+html {
+    overflow: hidden;
+}
+.m-auto {
+    margin: auto;
+}
 img {
     width: 100%;
     height: auto;
 }
-.m-auto {
-    width: auto;
-    margin: auto;
-}
 a {
     all: unset;
+}
+textarea {
+    resize: none;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.content {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.content.visible {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* ################################################################################################################################ */
@@ -39,7 +59,7 @@ a {
 /* bubbles stuff */
 .bubble {
     position: absolute;
-    background-color: cornflowerblue; 
+    background-color: #ACE6FF; 
     width: 70px;
     height: 30px;
     border-radius: 20px;
@@ -68,30 +88,29 @@ a {
 .top-section.home {
     height: 100px;
 }
+
 /* title section */
 .title-text-section.home {
     height: 300px;
+    max-width: 1250px;
 }
+
 /* buttons section */
 .button-section.home {
     height: auto;
 }
 
-/* top section */
-.top-section.home {
-    height: 100px;
-}
 /* title section */
 .title-text-section.home {
     height: 300px;
 }
+
 /* buttons section */
 .button-section.home {
     height: auto;
 }
 .btn.home {
     background-color: gray;    
-
     padding: 45px;
     width: 100%;
     height: 100%;
@@ -121,9 +140,17 @@ a {
     z-index: 999;
 }
 .news-section-header-title.home {
-    background-color: cornflowerblue;
+    background-color: #ACE6FF;
     padding: 15px;
     border-radius: 25px;
+    color: white;
+    text-shadow: 2px 2px black;
+    transition: 0.5s ease;
+}
+.news-section-header-title.home:hover {
+    text-shadow: 2px 2px royalblue;
+    transition: 0.5s ease;
+    font-size: 20px;
 }
 .news-section-body.home {
     /* sizing */
@@ -186,23 +213,107 @@ a {
 /* ########################## MAIN STUFF ########################## */
 /* ################################################################ */
 
+/* settings section */
+.settings-section.profile {
+    float: right;
+    max-width: 100px;
+    box-sizing: border-box; 
+}
+
 /* logo section */
 .logo-section.profile {
-    color: black;
+    max-width: 500px;
 }
 
 /* head section */
 .head-section.profile {
-    max-height: 75px !important;
-
+    max-width: 200px;
 }
 
+/* horizontal line */
+.line.profile {
+    width: 90%;
+}
+
+/* main1 section */
+.main1-section.profile {
+    width: 90%;
+}
+.description.profile {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.description-button.profile {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ACE6FF;
+    width: auto;
+    transition: 0.5s ease;
+    text-align: center;
+}
+.description-button.profile:hover {
+    background-color: #63D0FF;
+    transition: 0.5s ease;
+    box-shadow: 2px 2px black;
+}
+.description-button.profile:active {
+    box-shadow: none;
+}
+.friends-section.profile {
+    height: 142px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* main2 section */
+.main2-section.profile {
+    width: 90%;
+}
+.guess-title.profile {
+    width: 100%;
+}
+.expand-guess-button.profile {
+    all: unset;
+    float: right;
+    max-width: 15px;
+    transition: 0.5s ease;
+}
+.expand-guess-button.profile.active {
+    transform: rotate(45deg);
+}
+.expand-guess-button.profile:hover {
+    max-width: 20px;
+    transition: 0.5s ease;
+}
+.guess-section.profile {
+    height: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+.guess-section.profile.active {
+    height: 400px;
+    transition: 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+/* 
 .container-fluid {
     height: 100vh;
     width: 100%;
-}
-
-
+} */
 /* 
 @font-face {
     font-family: "Inter";
