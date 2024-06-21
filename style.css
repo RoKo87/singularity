@@ -36,6 +36,10 @@ body {
     transform: translateY(0);
     opacity: 1;
 }
+.logo-section {
+    max-width: 500px;
+}
+
 
 /* ################################################################################################################################ */
 /* ################################################################################################################################ */
@@ -226,11 +230,6 @@ body {
     box-sizing: border-box; 
 }
 
-/* logo section */
-.logo-section.profile {
-    max-width: 500px;
-}
-
 /* head section */
 .head-section.profile {
     max-width: 200px;
@@ -309,8 +308,87 @@ body {
     transition: 0.5s ease;
 }
 
+/* ################################################################################################################################ */
+/* ################################################################################################################################ */
+/* ########################################################## SURVEY PAGE ######################################################### */
+/* ################################################################################################################################ */
+/* ################################################################################################################################ */
 
+/* ################################################################ */
+/* ########################## MAIN STUFF ########################## */
+/* ################################################################ */
 
+/* logo section */
+.logo-section.survey {
+    padding-top: 100px;
+}
+
+/* message section */
+.message-section.survey {
+    width: 100%;
+    padding-top: 100px ;
+}
+.message.survey {
+    font-weight: bolder;
+}
+
+/* horizontal line */
+.line.survey {
+    width: 90%;
+}
+
+/* caption section */
+.caption-section.survey {
+    width: 100%;
+}
+.caption.survey {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/* button section */
+.button-section.survey {
+    padding-top: 300px;
+    width: 100%;
+    padding-bottom: 150px;
+}
+.button.survey {
+    all: unset;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: #ACE6FF;
+    color: black;
+    transition: 0.5s ease;
+    padding: 20px;
+    width: 20%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.button.survey:hover {    
+    transition: 0.5s ease;
+    box-shadow: 2px 2px black;
+    transform: translateX(-3px) translateY(-3px);
+}
+.button.survey:active {
+    box-shadow: none;
+    transform: translateX(3px) translateY(3px);
+}
+
+/* bottom section */
+.bottom-section.survey {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.bottom-text.survey {
+    background: -webkit-linear-gradient(360deg, #00B2FF, #006B99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.info-button.survey {
+    all: unset;
+    max-width: 50px;
+}
 
 
 
