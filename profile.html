@@ -21,11 +21,18 @@
     <!-- main container -->
     <div class="container-fluid">
 
+
+        <div class="row settings-section profile">
+                <div class="col profile" style="display: flex; justify-content: center; align-items: center;"><a href=""><img src="https://img.icons8.com/ios-glyphs/30000/000000/settings--v1.png" alt="settings--v1"/></a></div>
+        </div>
+
             <!-- logo section -->
-            <div class="row logo-section profile m-auto pt-5">
+            <div class="row logo-section profile m-auto pt-5" style="padding-left:50px;">
                     <div class="col text-center">
                             <!-- logo -->
                             <img src="logo2.png" alt="singularity-logo">
+
+
                     </div>  
             </div>
 
@@ -48,29 +55,39 @@
             </div>
 
             <!-- main section 1 -->
-            <div class="main1-section profile m-auto">
-                <!-- description -->
-                <div class="col-6">
-                        <b>Description</b>
-                        <div class="description-section profile">
-                                <textarea id="description-profile" class="description profile" rows="5" placeholder="Edit description..." required></textarea>
+            <div class="row main1-section profile m-auto">
+                                <!-- description -->
+                                <div class="col-6">
+                                        <!-- description input -->
+                                        <div><b>Description</b></div>
+                                        <div class="description-section profile">
+                                                <textarea id="description-profile" class="description profile" rows="5" placeholder="Edit description..." required></textarea>
+                                        </div>
+                                        <!-- buttons -->
+                                        <div>
+                                                <button class="description-button profile" onclick="saveDescription('description-profile')"> Save </button>
+                                                <button class="description-button profile"  onclick="resetDescription()"> Reset </button>
+                                        </div>
+                                </div>
+                                <!-- friends -->
+                                <div class="col-6">
+                                        <div style="text-align: right;"><b>Friends</b></div>
+                                        <div class="friends-section profile"></div>
+
+                                        <div style="padding-top: 6px; display:flex; justify-content:flex-end; gap: 5px;">
+                                                <button class="description-button profile"> Add </button>
+                                                <button class="description-button profile"> Remove </button>
+                                        </div>
                         </div>
+            </div>
 
-                        <div>
+            <div class="row main2-section profile m-auto pt-5">
+                <div class="guess-title profile"><b>Guesses</b> <button class="expand-guess-button profile" onclick="expand(event,'guesses')"><img class="m-auto" src="https://img.icons8.com/ios-glyphs/300/000000/plus-math.png" alt="plus-math"/></button></div>
 
-                               <button class="description-button profile" onclick="saveDescription('description-profile')"> Save </button>
-                                <button class="description-button profile"  onclick="resetDescription()"> Reset </button>
-                        
-
-                        </div>
-                </div>
-
-                <div class="col-6">
-
-                </div>
+                <div id="guesses" class="col guess-section profile"></div>
             </div>
 
     </div>
-
+ 
 </body>
 </html>

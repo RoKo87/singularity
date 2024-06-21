@@ -3,13 +3,17 @@
 /* ################################################################ */
 
 /* main stuff */
+
+html {
+    overflow: hidden;
+}
+
+.m-auto {
+    margin: auto;
+}
 img {
     width: 100%;
     height: auto;
-}
-.m-auto {
-    width: auto;
-    margin: auto;
 }
 a {
     all: unset;
@@ -198,6 +202,13 @@ button {
 /* ########################## MAIN STUFF ########################## */
 /* ################################################################ */
 
+/* settings section */
+.settings-section.profile {
+    float: right;
+    max-width: 100px;
+    box-sizing: border-box; 
+}
+
 /* logo section */
 .logo-section.profile {
     max-width: 500px;
@@ -206,7 +217,6 @@ button {
 /* head section */
 .head-section.profile {
     max-width: 200px;
-
 }
 
 /* horizontal line */
@@ -222,13 +232,14 @@ button {
     width: 100%;
     border-radius: 10px;
     padding: 10px;
+    border: 1px solid black;
 }
 .description-button.profile {
     border: 1px solid black;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     background-color: #ACE6FF;
-    width: 10%;
+    width: auto;
     transition: 0.5s ease;
     text-align: center;
 }
@@ -236,11 +247,44 @@ button {
     background-color: #63D0FF;
     transition: 0.5s ease;
 }
+.friends-section.profile {
+    height: 142px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
 
+/* main2 section */
+.main2-section.profile {
+    width: 90%;
+}
+.guess-title.profile {
+    width: 100%;
+}
+.expand-guess-button.profile {
+    float: right;
+    max-width: 15px;
+    transition: 0.5s ease;
+}
+.expand-guess-button.profile.active {
+    transform: rotate(45deg);
+}
+.expand-guess-button.profile:hover {
+    max-width: 20px;
+    transition: 0.5s ease;
+}
+.guess-section.profile {
+    height: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
 
-
-
-
+.guess-section.profile.active {
+    height: 400px;
+    transition: 0.5s ease;
+}
 
 
 
