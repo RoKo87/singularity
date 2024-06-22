@@ -313,25 +313,37 @@ body {
 /* ########################################################## SURVEY PAGE ######################################################### */
 /* ################################################################################################################################ */
 /* ################################################################################################################################ */
-
 .survey-page {
-
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: 0.5s ease;
+    display: none;
 }
 
 .survey-page.active {
-
-    opacity: 1;
-    transform: translateX(0px);
-    transition: 0.5s ease;
+    display: block;
 }
 
+.go-left.survey {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
+.go-right.survey {
+    transform: translateX(20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
+.fade-in.survey {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
-
+.faded-out.survey {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
 
 
