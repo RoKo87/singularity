@@ -90,7 +90,8 @@ body {
 
 /* top section */
 .top-section.home {
-    height: 100px;
+    float: right;
+    max-width: 100px;
 }
 
 /* title section */
