@@ -30,6 +30,7 @@ function next(id) {
     }, 1000);
 }
 
+//there is some weird stuff going on here but it works don't mess with it
 function back(id) {
     var page = document.getElementById(id);
     var prevPage;
@@ -37,10 +38,12 @@ function back(id) {
     // Fade out current page to the right
     page.classList.add('go-right');
 
+
     setTimeout(function() {
         page.classList.remove('active');
         page.classList.remove('go-right');
-    }, 500);
+        prevPage.classList.add('go-left', 'active');
+    }, 250);
 
     // Find previous page
     for (var i = 0; i < pages.length; i++) {
@@ -49,9 +52,6 @@ function back(id) {
             break;
         }
     }
-
-    // Fade in previous page from the left
-    prevPage.classList.add('go-left', 'active');
 
     setTimeout(function() {
         prevPage.classList.remove('go-left');
@@ -62,8 +62,6 @@ function back(id) {
         prevPage.classList.remove('fade-in');
     }, 1000);
 }
-
-
 
 var buttonsAge = ['age1', 'age2', 'age3', 'age4', 'age5', 'age6', 'age7']
 
