@@ -13,6 +13,11 @@ html {
 img {
     width: 100%;
     height: auto;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
 }
 a {
     all: unset;
@@ -39,7 +44,6 @@ body {
 .logo-section {
     max-width: 500px;
 }
-
 
 /* ################################################################################################################################ */
 /* ################################################################################################################################ */
@@ -314,6 +318,7 @@ body {
 /* ########################################################## SURVEY PAGE ######################################################### */
 /* ################################################################################################################################ */
 /* ################################################################################################################################ */
+
 .survey-page {
     display: none;
 }
@@ -323,13 +328,13 @@ body {
 }
 
 .go-left.survey {
-    transform: translateX(-20px);
+    transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .go-right.survey {
-    transform: translateX(20px);
+    transform: translateX(100%);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
@@ -339,14 +344,6 @@ body {
     transform: translateX(0);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
-.faded-out.survey {
-    opacity: 0;
-    transform: translateX(20px);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-
 
 
 /* ################################################################ */
@@ -420,14 +417,69 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.info-button.survey {
+.btn.survey {
+    max-width: 75px;
+    float: right;
+}
+
+/* ################################################################ */
+/* ########################### AGE PAGE ########################### */
+/* ################################################################ */
+
+.age-section.survey {
+    padding-top: 150px;
+}
+.age-button.survey {
     all: unset;
-    max-width: 50px;
+    background-color: #ACE6FF;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 5px;
+    width: 10%;
+    transition: 0.15s ease;
+}
+.age-button.survey:hover {
+    transition: 0.15s ease;
+    box-shadow: 1px 1px black;
+    transform: translateX(-1px) translateY(-1px);
+}
+.age-button.survey:active {
+    box-shadow: none;
+    transform: translateX(1px) translateY(1px);
+    transition: 0.15s ease;
+}
+.age-button.survey.active {
+    background-color: #63D0FF;
+    transition: 0.15s ease;
+}
+.age-section1.survey .col {
+    display: flex; /* Use flexbox to center buttons vertically */
+    justify-content: center; /* Center items horizontally */
+}
+.age-section1.survey {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.age-section2.survey .col {
+    display: flex; /* Use flexbox to center buttons vertically */
+    justify-content: center; /* Center items horizontally */
+}
+.age-section2.survey {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
-
-
+/* button section */
+.button-section.survey.age {
+    padding-top: 100px;
+}
+.button.survey.age {
+    width: 10%;
+}
 
 
 /* 
