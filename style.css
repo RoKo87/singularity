@@ -363,6 +363,12 @@ body {
     transform: translateX(0);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
+.back-button.survey {
+    max-width: 25px;
+}
+.next-button.survey {
+    max-width: 25px;
+}
 
 
 /* ################################################################ */
@@ -497,10 +503,51 @@ body {
     padding-top: 100px;
 }
 .button.survey.age {
-    width: 10%;
+    max-width: 10%;
+    display: flex;
+    align-items: center;
 }
 
+/* ################################################################ */
+/* ######################### LOCATION PAGE ######################## */
+/* ################################################################ */
 
+.location-section.survey {
+    padding-top: 100px;
+}
+
+.button-section.survey.location {
+    padding-top: 150px;
+}
+
+.input-group.location {
+    width: 75%;
+}
+
+.edu-button.survey {
+    all: unset;
+    background-color: #ACE6FF;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 5px;
+    width: 20%;
+    transition: 0.15s ease;
+}
+.edu-button.survey:hover {
+    transition: 0.15s ease;
+    box-shadow: 1px 1px black;
+    transform: translateX(-1px) translateY(-1px);
+}
+.edu-button.survey:active {
+    box-shadow: none;
+    transform: translateX(1px) translateY(1px);
+    transition: 0.15s ease;
+}
+.edu-button.survey.active {
+    background-color: #63D0FF;
+    transition: 0.15s ease;
+}
 /* 
 .container-fluid {
     height: 100vh;

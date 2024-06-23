@@ -9,7 +9,7 @@ function next(id) {
     setTimeout(function() {
         page.classList.remove('active');
         page.classList.remove('go-left');
-    }, 500);
+    }, 250);
 
     for (var i = 0; i < pages.length; i++) {
         if (pages[i] === id) {
@@ -71,6 +71,23 @@ function select(evt) {
     // Remove 'active' class from all buttons
     for (var i = 0; i < buttonsAge.length; i++) {
         var button = document.getElementById(buttonsAge[i])
+
+        if (button) {
+            button.classList.remove('active')
+        }
+    }
+    // Add 'active' class to the clicked button
+    buttonPressed.classList.toggle('active');
+}
+
+var buttonsEdu = ['edu1', 'edu2', 'edu3', 'edu4', 'edu5', 'edu6', 'edu7']
+
+function select2(evt) {
+    var buttonPressed = evt.currentTarget;
+    
+    // Remove 'active' class from all buttons
+    for (var i = 0; i < buttonsAge.length; i++) {
+        var button = document.getElementById(buttonsEdu[i])
 
         if (button) {
             button.classList.remove('active')

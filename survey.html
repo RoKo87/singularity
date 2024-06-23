@@ -128,8 +128,8 @@
                 <div class="row button-section age survey">
                         
                         <div class="col d-flex justify-content-center align-items-center">
-                                <button onclick="back('age')" class="button survey text-center">Back</button>
-                                <button onclick="next('age')" class="button survey age text-center">Next</button>
+                                <button onclick="back('age')" class="button survey age text-center me-5"> <div class="back-arrow survey"><img style="transform:rotate(270deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> Back</button>
+                                <button onclick="next('age')" class="button survey age text-center"> Next <div class="next-arrow survey"><img style="transform:rotate(90deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> </button>
                         </div>
                 </div>
 
@@ -183,9 +183,22 @@
                         <div class="col caption survey text-center"><i>Feel free to be as vague as you want!</i></div>
                 </div>
 
+                <div class="row location-section survey">
+                        <div class="col d-flex align-items-center justify-content-center">
+                                <div class="input-group location mb-3">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                      </div>
+                        </div>
+
+                </div>
+
                 <!-- button section -->
-                <div class="row button-section survey">
-                        <div class="col d-flex justify-content-center align-items-center"><button onclick="next('location')" class="button survey text-center">Next</button></div>
+                <div class="row button-section survey location">
+                        <div class="col d-flex justify-content-center align-items-center">
+                                <button onclick="back('location')" class="button survey age text-center me-5"> <div class="back-arrow survey"><img style="transform:rotate(270deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> Back</button>
+                                <button onclick="next('location')" class="button survey age text-center"> Next <div class="next-arrow survey"><img style="transform:rotate(90deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> </button>
+                        </div>
                 </div>
 
                 <!-- bottom section -->
@@ -221,34 +234,43 @@
         <div id="occupation" class="container-fluid min-vh-100 survey-page survey">
                 <!-- logo section -->
                 <div class="row logo-section survey m-auto">
-                <div class="col text-center">
-                        <!-- logo -->
-                        <img src="logos/logo2.png" alt="singularity-logo">
-                </div>
+                        <div class="col text-center">
+                                <!-- logo -->
+                                <img src="logos/logo2.png" alt="singularity-logo">
+                        </div>
                 </div>
 
                 <!-- message -->
                 <div class="row message-section survey">
-                <div class="col message survey text-center">
-                        <h1>What is your occupation?</h1>
-                </div>
+                        <div class="col message survey text-center"><h1>What is your occupation?</h1></div>
                 </div>
 
                 <!-- line -->
                 <hr class="line survey m-auto">
 
+                
+
                 <!-- caption section -->
                 <div class="row caption-section survey">
-                <div class="col caption survey text-center">
-                        <i>Your info will NOT be shared and is anonymous!</i>
+                        <div class="col caption survey text-center"><i>Your info will NOT be shared and is anonymous!</i></div>
                 </div>
+
+                <div class="row location-section survey">
+                        <div class="col d-flex align-items-center justify-content-center">
+                                <div class="input-group location mb-3">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Occupation</span>
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                      </div>
+                        </div>
+
                 </div>
 
                 <!-- button section -->
-                <div class="row button-section survey">
-                <div class="col d-flex justify-content-center align-items-center">
-                        <button onclick="next('occupation')" class="button survey text-center">Next</button>
-                </div>
+                <div class="row button-section location survey">
+                        <div class="col d-flex justify-content-center align-items-center">
+                                <button onclick="back('occupation')" class="button survey age text-center me-5"> <div class="back-arrow survey"><img style="transform:rotate(270deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> Back</button>
+                                <button onclick="next('occupation')" class="button survey age text-center"> Next <div class="next-arrow survey"><img style="transform:rotate(90deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> </button>
+                        </div>
                 </div>
 
                 <!-- bottom section -->
@@ -284,17 +306,15 @@
         <div id="education" class="container-fluid min-vh-100 survey-page survey">
                 <!-- logo section -->
                 <div class="row logo-section survey m-auto">
-                <div class="col text-center">
-                        <!-- logo -->
-                        <img src="logos/logo2.png" alt="singularity-logo">
-                </div>
+                        <div class="col text-center">
+                                <!-- logo -->
+                                <img src="logos/logo2.png" alt="singularity-logo">
+                        </div>
                 </div>
 
                 <!-- message -->
                 <div class="row message-section survey">
-                <div class="col message survey text-center">
-                        <h1>What is your highest level of education?</h1>
-                </div>
+                        <div class="col message survey text-center"><h1>What is your highest level of education?</h1></div>
                 </div>
 
                 <!-- line -->
@@ -302,16 +322,36 @@
 
                 <!-- caption section -->
                 <div class="row caption-section survey">
-                <div class="col caption survey text-center">
-                        <i>Your info will NOT be shared and is anonymous!</i>
+                        <div class="col caption survey text-center"><i>Your info will NOT be shared and is anonymous!</i></div>
                 </div>
+
+                <div class="row age-section survey">
+                        <div class="col">
+                                <div class="row age-section1 survey">
+                                        <div class="col">
+                                                <button id="edu1" class="edu-button survey" onclick="select2(event)">High School Dropout</button>
+                                                <button id="edu2" class="edu-button survey" onclick="select2(event)">High School Graduate or GED Equivalent</button>
+                                                <button id="edu3" class="edu-button survey" onclick="select2(event)">Vocation or Technical Training</button>
+                                                <button id="edu4" class="edu-button survey" onclick="select2(event)">Associate's Degree (Two-Year Degree)</button>
+                                        </div>
+                                </div>
+                                
+                                <div class="row age-section2 survey">
+                                        <div class="col">
+                                                <button id="edu5" class="edu-button survey" onclick="select2(event)">Bachelor's Degree (Four-Year Degree)</button>
+                                                <button id="edu6" class="edu-button survey" onclick="select2(event)">Master's Degree</button>
+                                                <button id="edu7" class="edu-button survey" onclick="select2(event)">Doctorate or Ph.D</button>
+                                        </div>
+                                </div>
+                        </div>
                 </div>
 
                 <!-- button section -->
-                <div class="row button-section survey">
-                <div class="col d-flex justify-content-center align-items-center">
-                        <button onclick="next('education')" class="button survey text-center">Next</button>
-                </div>
+                <div class="row button-section age survey">
+                        <div class="col d-flex justify-content-center align-items-center">
+                                <button onclick="back('education')" class="button survey age text-center me-5"> <div class="back-arrow survey"><img style="transform:rotate(270deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> Back</button>
+                                <button onclick="window.location.href='profile.html'" class="button survey age text-center"> Next <div class="next-arrow survey"><img style="transform:rotate(90deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> </button>
+                        </div>
                 </div>
 
                 <!-- bottom section -->
