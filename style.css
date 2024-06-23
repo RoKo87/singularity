@@ -515,15 +515,12 @@ body {
 .location-section.survey {
     padding-top: 100px;
 }
-
 .button-section.survey.location {
     padding-top: 150px;
 }
-
 .input-group.location {
     width: 75%;
 }
-
 .edu-button.survey {
     all: unset;
     background-color: #ACE6FF;
