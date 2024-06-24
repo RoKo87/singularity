@@ -341,23 +341,19 @@ body {
 .survey-page {
     display: none;
 }
-
 .survey-page.active {
     display: block;
 }
-
 .go-left.survey {
     transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
 .go-right.survey {
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
 .fade-in.survey {
     opacity: 1;
     transform: translateX(0);
@@ -545,22 +541,3 @@ body {
     background-color: #63D0FF;
     transition: 0.15s ease;
 }
-/* 
-.container-fluid {
-    height: 100vh;
-    width: 100%;
-} */
-/* 
-@font-face {
-    font-family: "Inter";
-    src: url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/1130e1ae4e4a76c7118c0b35c4b9d019.svg#Inter")format("svg");
-    src: url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/6808f299811c1703a1cacc77ced26c5d.svg#Inter Bold")format("svg");
-} */
