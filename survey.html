@@ -350,7 +350,69 @@
                 <div class="row button-section age survey">
                         <div class="col d-flex justify-content-center align-items-center">
                                 <button onclick="back('education')" class="button survey age text-center me-5"> <div class="back-arrow survey"><img style="transform:rotate(270deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> Back</button>
-                                <button onclick="window.location.href='profile.html'" class="button survey age text-center"> Next <div class="next-arrow survey"><img style="transform:rotate(90deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> </button>
+                                <button onclick="next('education')" class="button survey age text-center"> Next <div class="next-arrow survey"><img style="transform:rotate(90deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> </button>
+                        </div>
+                </div>
+
+                <!-- bottom section -->
+                <div class="row bottom-section survey p-3">
+                <div class="col-6">Not interested? <span class="bottom-text survey"><a href="homepage.html">Feel free to skip here.</a></span></div>
+                <div class="col-6 info-button-section survey">
+                        <button class="btn survey" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEducation" aria-controls="offcanvasEducation">
+                        <img src="https://img.icons8.com/ios-filled/5000/000000/info.png" alt="info"/>
+                        </button>
+                </div>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasEducation" aria-labelledby="offcanvasEducationLabel">
+                        <div class="offcanvas-header">
+                        <h3 class="offcanvas-title" id="offcanvasEducationLabel">FAQs</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                                <dl>
+                                        <dt><h4>Why are we asking for this information?</h4></dt>
+                                        <dd>We ask for age, location, occupation, and education level to provide insights into the diverse perspectives and demographics of those making guesses about the Singularity. Rest assured, your specific information is kept confidential and cannot be accessed by anyone else on the platform. This data helps us analyze trends anonymously and improve our service for all users.</dd>
+                                        <br>
+                                        <dt><h4>What happens if I don't enter any information?</h4></dt>
+                                        <dd>If you choose not to enter any information, that's perfectly fine—your guess about the Singularity remains valuable. However, providing your age, location, occupation, and education level enriches our analyses, offering insights like average age trends and regional distributions of guesses. This enhances the overall understanding and diversity of perspectives on predictions about the Singularity.</dd>
+                                        <dt><h4>Why does my informaation matter?</h4></dt>
+                                        <dd>Your information matters because it helps us analyze trends and demographics among users making predictions about the Singularity. Understanding factors like age, location, occupation, and education level allows us to provide insights into the diverse perspectives and backgrounds contributing to our platform. This enhances the accuracy and depth of our analyses, enriching the experience for all participants.</dd>
+                                </dl>
+                        </div>
+                </div>
+                </div>
+        </div>
+
+        <!-- thank you container -->
+        <div id="thankyou" class="container-fluid min-vh-100 survey-page survey">
+                <!-- logo section -->
+                <div class="row logo-section survey m-auto">
+                        <div class="col text-center">
+                                <!-- logo -->
+                                <img src="logos/logo2.png" alt="singularity-logo">
+                        </div>
+                </div>
+
+                <!-- message -->
+                <div class="row message-section survey">
+                        <div class="col message survey text-center"><h1>Thank you for answering!</h1></div>
+                </div>
+
+                <!-- line -->
+                <hr class="line survey m-auto">
+
+                <!-- caption section -->
+                <div class="row caption-section survey">
+                        <div class="col caption survey text-center"><i>Remember: your info will NOT be shared and is anonymous.</i></div>
+                </div>
+
+
+                <!-- button section -->
+                <div class="row button-section age survey">
+                        <div class="col d-flex justify-content-center align-items-center">
+                                <button onclick="back('thankyou')" class="button survey age text-center me-5"> <div class="back-arrow survey"><img style="transform:rotate(270deg);" src="https://img.icons8.com/fluency-systems-filled/1000/000000/triangle.png" alt="triangle"/></div> Back</button>
+                                <button onclick="window.location.href='profile.html'" class="button survey age text-center" style="justify-content: center;"> Profile </button>
+                                <button onclick="window.location.href='homepage.html'" class="button survey age text-center" style="justify-content: center;"> Home </button>
                         </div>
                 </div>
 

@@ -1,4 +1,4 @@
-var pages = ['main', 'age', 'location', 'occupation', 'education'];
+var pages = ['main', 'age', 'location', 'occupation', 'education', 'thankyou'];
 
 function next(id) {
     var page = document.getElementById(id);
