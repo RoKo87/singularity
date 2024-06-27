@@ -96,4 +96,3 @@ function select2(evt) {
     // Add 'active' class to the clicked button
     buttonPressed.classList.toggle('active');
 }
-

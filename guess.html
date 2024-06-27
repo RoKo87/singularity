@@ -226,152 +226,107 @@
 
     <!-- year -->
     <div class="row main1-section profile m-auto">
-        <p>Enter the Uhr:</p>
-        <div class="input-group col">
-            <span class="input-group-text fs-5" style="font-weight: bold; width: 15vh; justify-content: center;">Uhr</span>
-            <input type="number" min="2024" class="form-control" placeholder="Year" id="year_input" onchange="showDates();">
+        <p>Enter the time:</p>
+        <div class="row">
+            <div class="col-6">
+                <div class="row" style="width: 40vw">
+                    <div class="col">
+                        <button class="btn btn-2">1</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">2</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">3</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">4</button>
+                    </div>
+                </div>
+                <div class="row" style="width: 40vw">
+                    <div class="col">
+                        <button class="btn btn-2">5</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">6</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">7</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">8</button>
+                    </div>
+                </div>
+                <div class="row" style="width: 40vw">
+                    <div class="col">
+                        <button class="btn btn-2">9</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">10</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">11</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-2">12</button>
+                    </div>
+                </div>
+                <div class="row" style="width: 40vw">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="transform: translate(15px, 0px)">
+                        <label class="form-check-label" for="inlineRadio1" style="transform: translate(15px, 0px)">A.M.</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="transform: translate(100px, -26px)">
+                        <label class="form-check-label" for="inlineRadio2" style="transform: translate(100px, -26px)">P.M.</label>
+                      </div>
+                </div>
+            </div>
+            <div class="col-6" style="justify-content: center">
+                <div class="slidecontainer">
+                    <div class="row" style="width: 50vw">
+                        <div class="col-3">
+                            <span class="input-group-text fs-8" style="font-weight: bold; width: 10vw; justify-content: center;">Minute</span>
+                        </div>
+                        <div class="col-9">
+                            <p class="p-2" id="min-show">0</p>
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="59" value="0" class="slider" id="min-slider" style="width: 40vw; transform: translateY(-15px)" oninput="minsliderupdate()">
+                </div>
+
+                <div class="slidecontainer">
+                    <div class="row" style="width: 50vw">
+                        <div class="col-3">
+                            <span class="input-group-text fs-8" style="font-weight: bold; width: 10vw; justify-content: center; transform: translateY(15px)">Second</span>
+                        </div>
+                        <div class="col-9">
+                            <p class="p-2" id="sec-show" style="transform: translateY(15px)">0</p>
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="59" value="0" class="slider" id="sec-slider" style="width: 40vw; transform: translateY(0px)" oninput="secsliderupdate()">
+                </div>
+            </div>
         </div>
     </div>
-
     <br><br>
-     <!-- line -->
-     <hr class="line profile m-auto pt-3">
-
      <!-- month -->
-    <div class="row main1-section profile m-auto">
-        <p>Enter the date:</p>
-        <div class="input-group col">
-            <span class="input-group-text fs-5" style="font-weight: bold; width: 15vh; justify-content: center;">Month</span>
-            <select class="form-select fs-8" id="month_input" onchange="showDates();">
-                <option value="0"> Choose...</option>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-                </select>
+    <div class="row main1-section profile m-auto" style="transform: translateY(-30px)">
+        <div class="slidecontainer">
+            <div class="row" style="width: 100vw">
+                <div class="col-2">
+                    <span class="input-group-text fs-8" style="font-weight: bold; width: 15vw; justify-content: center;">Millisecond</span>
+                </div>
+                <div class="col-10">
+                    <p class="p-2" id="milli-show">0</p>
+                </div>
+            </div>
+            <input type="range" min="0" max="999" value="0" class="slider" id="milli-slider" style="width: 85vw; transform: translateY(-15px)" oninput="millisliderupdate()">
         </div>
     </div>
 
     <br><br>
 
-    <!-- days -->
-    <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-1">
-        <div class="col-1">
-            <button class="btn btn-2">1</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">2</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">3</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">4</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">5</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">6</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">7</button>
-        </div>
-        
-    </div>
-    <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-2">
-        <div class="col-1">
-            <button class="btn btn-2">8</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">9</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">10</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">11</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">12</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">13</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">14</button>
-        </div>
-        
-    </div>
-    <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-3">
-        <div class="col-1">
-            <button class="btn btn-2">15</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">16</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">17</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">18</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">19</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">20</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">21</button>
-        </div>
-        
-    </div>
-    <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-4">
-        <div class="col-1">
-            <button class="btn btn-2">22</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">23</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">24</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">25</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">26</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">27</button>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-2">28</button>
-        </div>
-        
-    </div>
-
-    <div class="row" style="width: 103vw; transform: translate(20vw);">
-        <div class="col-1" id="date-29" style="display: none">
-            <button class="btn btn-2" >29</button>
-        </div>
-        <div class="col-1" id="date-30" style="display: none">
-            <button class="btn btn-2">30</button>
-        </div>
-        <div class="col-1" id="date-31" style="display: none">
-            <button class="btn btn-2">31</button>
-        </div>
-        
-    </div>
     <br>
     <!-- buttons at end -->
     <div class="row main1-section profile m-auto" style="justify-content: center;">

@@ -110,3 +110,16 @@ function back(id) {
         prevPage.classList.remove('fade-in');
     }, 1000);
 }
+
+// update the value shown when slider is drawn.
+function minsliderupdate() {
+    setText("min-show", getValue("min-slider"))
+}
+
+function secsliderupdate() {
+    setText("sec-show", getValue("sec-slider"))
+}
+
+function millisliderupdate() {
+    setText("milli-show", getValue("milli-slider"))
+}
