@@ -507,12 +507,15 @@ class Date {
         edu.innerHTML = content;
     }
 
-    showBubble() {
+    showBubble(position) {
+        var element = document.getElementById('bubbles');
         var bubble = document.createElement('div');
-        document.body.appendChild(bubble);
+        element.appendChild(bubble);
         bubble.setAttribute('class', 'bubble_trends');
 
         bubble.innerHTML = this.year;
+        bubble.style.left = position.getX() +'px'
+        bubble.style.top = position.getY() +'px'
     }
 }
 
@@ -674,6 +677,21 @@ class OccupationList {
     }
 }
 
+class Position {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    getX() {
+        return this.x;
+    }
+
+    getY() {
+        return this.y;
+    }
+}
+
 function round_2(x) {
     return Math.round(x * 100) / 100;
   }
@@ -751,11 +769,25 @@ function randomizeOccupation() {
     return new OccupationList(occupations);
 }
 
+function randomPosition(size) {
+    
+    const maxWidth = window.innerWidth;
+    const maxHeight = window.innerHeight;
+
+    var randomX = Math.floor(Math.random() * (maxWidth - size));
+    var randomY = Math.floor(Math.random() * (maxHeight - size));
+
+    return new Position(randomX, randomY);
+}
+
+
+
 
    
 shuffle(cities);
 shuffle(jobs);
 
+// console.log(randomPosition(100));
 
 
 
@@ -767,7 +799,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // test.showLoc();
     // test.showOcc();
     // test.showEdu();
-    test.showBubble();
+    test.showBubble(randomPosition(100));
 
 
 });
