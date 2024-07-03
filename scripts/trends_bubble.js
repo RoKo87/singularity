@@ -392,9 +392,287 @@ var jobs = [
     'Writer',
     'Zoologist'
 ]
-   
-shuffle(cities);
-shuffle(jobs);
+
+class Date {
+    constructor(year, num, age_list, loc_list, occu_list, edu_list) {
+        this.year = year;
+        this.num = num;
+        this.age_list = age_list;
+        this.loc_list = loc_list;
+        this.occu_list = occu_list;
+        this.edu_list = edu_list;
+    }
+
+    getAge() {
+       return this.age_list.printItems();
+    }
+
+    getLoc() {
+        return this.loc_list.printItems();
+    }
+
+    getOcc() {
+        return this.occu_list.printItems();
+    }
+
+    getEdu() {
+        return this.edu_list.printItems();
+    }
+
+    showAge() {
+        var age_title = document.createElement('b');
+        document.body.appendChild(age_title);
+        age_title.style.padding = '20px'
+
+        var age = document.createElement('div');
+        age.setAttribute('id', 'age')
+        age.style.padding = '20px'
+        document.body.appendChild(age);
+
+        var text = this.getAge();``
+        console.log(this.getAge());
+        var content = '';
+        for (var i = 0; i < text.length; i++) {
+            content += text[i];
+            content += '<br>';
+        }
+
+        age_title.innerHTML = 'Ages';
+        age.innerHTML = content;
+    }
+
+    showLoc() {
+        var loc_title = document.createElement('b');
+        document.body.appendChild(loc_title);
+        loc_title.style.padding = '20px'
+    
+        var loc = document.createElement('div');
+        loc.setAttribute('id', 'loc')
+        loc.style.padding = '20px'
+        document.body.appendChild(loc);
+    
+        var text = this.getLoc();
+        console.log(this.getLoc());
+        var content = '';
+        for (var i = 0; i < text.length; i++) {
+            content += text[i];
+            content += '<br>';
+        }
+        
+        loc_title.innerHTML = 'Location';
+        loc.innerHTML = content;
+    }
+
+    showOcc() {
+        var occ_title = document.createElement('b');
+        document.body.appendChild(occ_title);
+        occ_title.style.padding = '20px'
+
+        var occ = document.createElement('div');
+        occ.setAttribute('id', 'occ')
+        occ.style.padding = '20px'
+        document.body.appendChild(occ);
+
+        var text = this.getOcc();
+        console.log(this.getOcc());
+        var content = '';
+        for (var i = 0; i < text.length; i++) {
+            content += text[i];
+            content += '<br>';
+        }
+        
+        occ_title.innerHTML = 'Occupation';
+        occ.innerHTML = content;
+    }
+
+    showEdu() {
+        var edu_title = document.createElement('b');
+        document.body.appendChild(edu_title);
+        edu_title.style.padding = '20px'
+
+        var edu = document.createElement('div');
+        edu.setAttribute('id', 'edu')
+        edu.style.padding = '20px'
+        document.body.appendChild(edu);
+
+        var text = this.getEdu();
+        console.log(this.getEdu());
+        var content = '';
+        for (var i = 0; i < text.length; i++) {
+            content += text[i];
+            content += '<br>';
+        }
+        
+        edu_title.innerHTML = 'Education';
+        edu.innerHTML = content;
+    }
+
+    showBubble() {
+        var bubble = document.createElement('div');
+        document.body.appendChild(bubble);
+        bubble.setAttribute('class', 'bubble_trends');
+
+        bubble.innerHTML = this.year;
+    }
+}
+
+class AgeList {
+    constructor(group1, group2, group3, group4, group5, group6) { //percentages
+        this.data = new Map();
+        this.data.set('18 to 24 years', group1);
+        this.data.set('25 to 34 years', group2); // Corrected the label from '15 to 34 years'
+        this.data.set('35 to 44 years', group3);
+        this.data.set('45 to 54 years', group4);
+        this.data.set('55 to 64 years', group5);
+        this.data.set('65 years and up', group6);
+    }
+
+    // Method to get the map
+    getMap() {
+        return this.data;
+    }
+
+    // Method to get the keys as an array
+    getKeysArray() {
+        return Array.from(this.data.keys());
+    }
+
+    // Method to get the values as an array
+    getValuesArray() {
+        return Array.from(this.data.values());
+    }
+
+    sortByValues() {
+        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
+        this.data = new Map(sortedArray);
+    }
+
+    printItems() {
+        var info = [];
+        this.data.forEach((value, key) => {
+            info.push(`${key}: ${value}%\n`);
+        });
+        return info;
+    }
+}
+
+class EducationList {
+    constructor(group1, group2, group3, group4, group5, group6, group7) { //percentages
+        this.data = new Map();
+        this.data.set('High School Dropout', group1);
+        this.data.set('High School Graduate or GED Equivalent', group2);
+        this.data.set('Vocational or Technical Training', group3);
+        this.data.set('Associate\'s Degree (Two-Year Degree)', group4);
+        this.data.set('Bachelor\'s Degree (Four-Year Degree)', group5);
+        this.data.set('Master\'s Degree', group6);
+        this.data.set('Doctorate or Ph.D', group7);
+    }
+
+    // Method to get the map
+    getMap() {
+        return this.data;
+    }
+
+    // Method to get the keys as an array
+    getKeysArray() {
+        return Array.from(this.data.keys());
+    }
+
+    // Method to get the values as an array
+    getValuesArray() {
+        return Array.from(this.data.values());
+    }
+    sortByValues() {
+        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
+        this.data = new Map(sortedArray);
+    }
+
+    printItems() {
+        var info = [];
+        this.data.forEach((value, key) => {
+            info.push(`${key}: ${value}%\n`);
+        });
+        return info;
+    }
+}
+
+class LocationList {
+    constructor(locations) {
+        this.data = new Map();
+        this.data.set('1st', locations[0]);
+        this.data.set('2nd', locations[1]);
+        this.data.set('3rd', locations[2]);
+        this.data.set('4th', locations[3]);
+        this.data.set('5th', locations[4]);
+    }
+
+     // Method to get the map
+     getMap() {
+        return this.data;
+    }
+
+    // Method to get the keys as an array
+    getKeysArray() {
+        return Array.from(this.data.keys());
+    }
+
+    // Method to get the values as an array
+    getValuesArray() {
+        return Array.from(this.data.values());
+    }
+
+    sortByValues() {
+        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
+        this.data = new Map(sortedArray);
+    }
+
+    printItems() {
+        var info = [];
+        this.data.forEach((value, key) => {
+            info.push(`${key}: ${value}`);
+        });
+        return info;
+    }
+}
+
+class OccupationList {
+    constructor(occupations) {
+        this.data = new Map();
+        this.data.set('1st', occupations[0]);
+        this.data.set('2nd', occupations[1]);
+        this.data.set('3rd', occupations[2]);
+        this.data.set('4th', occupations[3]);
+        this.data.set('5th', occupations[4]);
+    }
+
+     // Method to get the map
+     getMap() {
+        return this.data;
+    }
+
+    // Method to get the keys as an array
+    getKeysArray() {
+        return Array.from(this.data.keys());
+    }
+
+    // Method to get the values as an array
+    getValuesArray() {
+        return Array.from(this.data.values());
+    }
+
+    sortByValues() {
+        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
+        this.data = new Map(sortedArray);
+    }
+
+    printItems() {
+        var info = [];
+        this.data.forEach((value, key) => {
+            info.push(`${key}: ${value}%\n`);
+        });
+        return info;
+    }
+}
 
 function round_2(x) {
     return Math.round(x * 100) / 100;
@@ -435,205 +713,17 @@ function shuffle(array) {
     }
 }
 
-class Date {
-    constructor(year, num, age_list, loc_list, occu_list, edu_list) {
-        this.year = year;
-        this.num = num;
-        this.age_list = age_list;
-        this.loc_list = loc_list;
-        this.occu_list = occu_list;
-        this.edu_list = edu_list;
-    }
-
-    printItems() {
-       this.age_list.printItems();
-       this.loc_list.printItems();
-       this.occu_list.printItems();
-       this.edu_list.printItems();
-    }
-}
-
-// group 1: 18 to 24 years
-// group 2: 15 to 34 years
-// group 3: 35 to 44 years
-// group 4: 45 to 54 years
-// group 5: 55 to 64 years
-// group 6: 65 years and up
-class AgeList {
-    constructor(group1, group2, group3, group4, group5, group6) { //percentages
-        this.data = new Map();
-        this.data.set('18 to 24 years', group1);
-        this.data.set('25 to 34 years', group2); // Corrected the label from '15 to 34 years'
-        this.data.set('35 to 44 years', group3);
-        this.data.set('45 to 54 years', group4);
-        this.data.set('55 to 64 years', group5);
-        this.data.set('65 years and up', group6);
-    }
-
-    // Method to get the map
-    getMap() {
-        return this.data;
-    }
-
-    // Method to get the keys as an array
-    getKeysArray() {
-        return Array.from(this.data.keys());
-    }
-
-    // Method to get the values as an array
-    getValuesArray() {
-        return Array.from(this.data.values());
-    }
-    sortByValues() {
-        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
-        this.data = new Map(sortedArray);
-    }
-
-    printItems() {
-        this.data.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    }
-}
-
-// group 1: High School Dropout
-// group 2: High School Graduate or GED Equivalent
-// group 3: Vocational or Technical Training
-// group 4: Associate's Degree (Two-Year Degree)
-// group 5: Bachelor's Degree (Four-Year Degree)
-// group 6: Master's Degree
-// group 7: Doctorate or Ph.D
-class EducationList {
-    constructor(group1, group2, group3, group4, group5, group6, group7) { //percentages
-        this.data = new Map();
-        this.data.set('High School Dropout', group1);
-        this.data.set('High School Graduate or GED Equivalent', group2);
-        this.data.set('Vocational or Technical Training', group3);
-        this.data.set('Associate\'s Degree (Two-Year Degree)', group4);
-        this.data.set('Bachelor\'s Degree (Four-Year Degree)', group5);
-        this.data.set('Master\'s Degree', group6);
-        this.data.set('Doctorate or Ph.D', group7);
-    }
-
-    // Method to get the map
-    getMap() {
-        return this.data;
-    }
-
-    // Method to get the keys as an array
-    getKeysArray() {
-        return Array.from(this.data.keys());
-    }
-
-    // Method to get the values as an array
-    getValuesArray() {
-        return Array.from(this.data.values());
-    }
-    sortByValues() {
-        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
-        this.data = new Map(sortedArray);
-    }
-
-    printItems() {
-        this.data.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    }
-}
-
-class LocationList {
-    constructor(locations) {
-        this.data = new Map();
-        this.data.set('1st', locations[0]);
-        this.data.set('2nd', locations[1]);
-        this.data.set('3rd', locations[2]);
-        this.data.set('4th', locations[3]);
-        this.data.set('5th', locations[4]);
-    }
-
-     // Method to get the map
-     getMap() {
-        return this.data;
-    }
-
-    // Method to get the keys as an array
-    getKeysArray() {
-        return Array.from(this.data.keys());
-    }
-
-    // Method to get the values as an array
-    getValuesArray() {
-        return Array.from(this.data.values());
-    }
-
-    sortByValues() {
-        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
-        this.data = new Map(sortedArray);
-    }
-
-    printItems() {
-        this.data.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    }
-}
-
-class OccupationList {
-    constructor(occupations) {
-        this.data = new Map();
-        this.data.set('1st', occupations[0]);
-        this.data.set('2nd', occupations[1]);
-        this.data.set('3rd', occupations[2]);
-        this.data.set('4th', occupations[3]);
-        this.data.set('5th', occupations[4]);
-    }
-
-     // Method to get the map
-     getMap() {
-        return this.data;
-    }
-
-    // Method to get the keys as an array
-    getKeysArray() {
-        return Array.from(this.data.keys());
-    }
-
-    // Method to get the values as an array
-    getValuesArray() {
-        return Array.from(this.data.values());
-    }
-
-    sortByValues() {
-        const sortedArray = Array.from(this.data.entries()).sort((a, b) => b[1] - a[1]);
-        this.data = new Map(sortedArray);
-    }
-
-    printItems() {
-        this.data.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    }
-}
-
 function randomizeAge() {
     var age_percents = percent_list(6);
     var age_list = new AgeList(age_percents[0], age_percents[1], age_percents[2], age_percents[3], age_percents[4], age_percents[5]);
     return age_list;
 }
-// var test = randomizeAge();
-// console.log(test.getMap());
-// test.sortByValues();
-// console.log(test.getMap());
 
 function randomizeEducation() {
     var edu_percents = percent_list(6);
     var edu_list = new EducationList(edu_percents[0], edu_percents[1], edu_percents[2], edu_percents[3], edu_percents[4], edu_percents[5], edu_percents[6]);
     return edu_list;
 }
-// var test = randomizeEducation();
-// console.log(test.getMap());
-// test.sortByValues();
-// console.log(test.getMap());
 
 function randomizeLocation() {
     var locations_test = cities.slice(0, 5);
@@ -647,7 +737,6 @@ function randomizeLocation() {
 
     return new LocationList(locations);
 }
-// console.log(randomizeLocation().printItems());
 
 function randomizeOccupation() {
     var occupations_test = jobs.slice(0, 5);
@@ -661,8 +750,24 @@ function randomizeOccupation() {
 
     return new OccupationList(occupations);
 }
-// console.log(randomizeOccupation().printItems());
+
+
+   
+shuffle(cities);
+shuffle(jobs);
+
+
+
 
 var test = new Date(2500, 50000, randomizeAge(), randomizeLocation(), randomizeOccupation(), randomizeEducation());
 
-console.log(test.printItems());
+document.addEventListener('DOMContentLoaded', function() {
+
+    // test.showAge();
+    // test.showLoc();
+    // test.showOcc();
+    // test.showEdu();
+    test.showBubble();
+
+
+});
