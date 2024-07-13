@@ -394,6 +394,8 @@ var jobs = [
 ]
 
 class Date {
+    static currentBubbles = [];
+
     constructor(year, num, age_list, loc_list, occu_list, edu_list) {
         this.year = year;
         this.num = num;
@@ -507,15 +509,55 @@ class Date {
         edu.innerHTML = content;
     }
 
+    checkBubbles(position) {
+        const newBubbleRadius = 50; // Adjust the radius based on your bubble size
+    
+        for (let i = 0; i < Date.currentBubbles.length; i++) {
+            const existingBubble = Date.currentBubbles[i];
+    
+            // Get position of existing bubble
+            const existingBubbleRect = existingBubble.getBoundingClientRect();
+            const existingBubbleCenterX = existingBubbleRect.left + existingBubbleRect.width / 2;
+            const existingBubbleCenterY = existingBubbleRect.top + existingBubbleRect.height / 2;
+    
+            // Calculate center coordinates of new bubble
+            const newBubbleCenterX = position.getX() + newBubbleRadius; // Assuming position is an object with getX() method
+            const newBubbleCenterY = position.getY() + newBubbleRadius; // Assuming position is an object with getY() method
+    
+            // Calculate distance between centers of existing and new bubbles
+            const distance = Math.sqrt(
+                Math.pow(existingBubbleCenterX - newBubbleCenterX, 2) +
+                Math.pow(existingBubbleCenterY - newBubbleCenterY, 2)
+            );
+    
+            // Compare distance with sum of radii to check for overlap
+            if (distance < existingBubbleRect.width / 2 + newBubbleRadius) {
+                return false; // Overlapping bubbles
+            }
+        }
+    
+        return true; // No overlapping bubbles found
+    }
+    
+    
+
     showBubble(position) {
+
+        while (!this.checkBubbles(position)) {
+            position = randomPosition(100);
+        }
+
+        this.checkBubbles(position);
         var element = document.getElementById('bubbles');
         var bubble = document.createElement('div');
         element.appendChild(bubble);
         bubble.setAttribute('class', 'bubble_trends');
+        Date.currentBubbles.unshift(bubble);
 
         bubble.innerHTML = this.year;
         bubble.style.left = position.getX() +'px'
         bubble.style.top = position.getY() +'px'
+
     }
 }
 
@@ -694,7 +736,7 @@ class Position {
 
 function round_2(x) {
     return Math.round(x * 100) / 100;
-  }
+}
 
 function percent_list(num) {
     var random_nums = [];
@@ -769,6 +811,18 @@ function randomizeOccupation() {
     return new OccupationList(occupations);
 }
 
+function randomizeYear() {
+    return Math.floor(Math.random() * 1000) + 2050;
+}
+
+
+function randomizePeople() {
+    var num = Math.random();
+
+    return Math.floor(Math.pow(5, num) * (Math.log(0.9)/Math.log(num)) * 1000)
+    
+}
+
 function randomPosition(size) {
     
     const maxWidth = window.innerWidth;
@@ -782,16 +836,19 @@ function randomPosition(size) {
 
 
 
+function createBubble() {
+    const date = new Date(randomizeYear(), randomizePeople(), randomizeAge(), randomizeLocation(), randomizeOccupation(), randomizeEducation());
+    date.showBubble(randomPosition(100));
+}
+
 
    
 shuffle(cities);
 shuffle(jobs);
 
-// console.log(randomPosition(100));
 
 
-
-var test = new Date(2500, 50000, randomizeAge(), randomizeLocation(), randomizeOccupation(), randomizeEducation());
+var test = new Date(randomizeYear(), randomizePeople(), randomizeAge(), randomizeLocation(), randomizeOccupation(), randomizeEducation());
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -799,7 +856,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // test.showLoc();
     // test.showOcc();
     // test.showEdu();
-    test.showBubble(randomPosition(100));
+    // test.showBubble(randomPosition(100));
 
+    // createBubble();
+    
+    for (var i = 0; i < 5; i++) {
+        createBubble();
+        
+    }
 
+    console.log(parseInt(Date.currentBubbles[0].style.left))
+    
 });
