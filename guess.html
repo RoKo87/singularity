@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="content">  
+<body class="content" style="overflow: scroll" onload="showGuess()">  
     <!-- main container -->
     <div id="date" class="container-fluid gslide active">
 
@@ -45,23 +45,17 @@
 
             <!-- year -->
             <div class="row main1-section profile m-auto">
-                <p>Enter the year:</p>
-                <div class="input-group col">
-                    <span class="input-group-text fs-5" style="font-weight: bold; width: 15vh; justify-content: center;">Year</span>
-                    <input type="number" min="2024" class="form-control" placeholder="Year" id="year_input" onchange="showDates();">
-                </div>
-            </div>
-
-            <br><br>
-             <!-- line -->
-             <hr class="line profile m-auto pt-3">
-
-             <!-- month -->
-            <div class="row main1-section profile m-auto">
                 <p>Enter the date:</p>
                 <div class="input-group col">
+                    <span class="input-group-text fs-5" style="font-weight: bold; width: 15vh; justify-content: center;">Year</span>
+                    <input type="number" min="2024" class="form-control" placeholder="Year" id="year_input" onchange="showDates(); showGuess()">
+                </div>
+            </div>
+             <!-- month -->
+            <div class="row main1-section profile m-auto">
+                <div class="input-group col">
                     <span class="input-group-text fs-5" style="font-weight: bold; width: 15vh; justify-content: center;">Month</span>
-                    <select class="form-select fs-8" id="month_input" onchange="showDates();">
+                    <select class="form-select fs-8" id="month_input" onchange="showDates(); showGuess()">
                         <option value="0"> Choose...</option>
                         <option value="1">January</option>
                         <option value="2">February</option>
@@ -84,117 +78,121 @@
             <!-- days -->
             <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-1">
                 <div class="col-1">
-                    <button class="btn btn-2">1</button>
+                    <button class="btn btn-2" onclick="daySelected(1); showGuess()">1</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">2</button>
+                    <button class="btn btn-2" onclick="daySelected(2); showGuess()">2</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">3</button>
+                    <button class="btn btn-2" onclick="daySelected(3); showGuess()">3</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">4</button>
+                    <button class="btn btn-2" onclick="daySelected(4); showGuess()">4</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">5</button>
+                    <button class="btn btn-2" onclick="daySelected(5); showGuess()">5</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">6</button>
+                    <button class="btn btn-2" onclick="daySelected(6); showGuess()">6</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">7</button>
+                    <button class="btn btn-2" onclick="daySelected(7); showGuess()">7</button>
                 </div>
                 
             </div>
             <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-2">
                 <div class="col-1">
-                    <button class="btn btn-2">8</button>
+                    <button class="btn btn-2" onclick="daySelected(8); showGuess()">8</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">9</button>
+                    <button class="btn btn-2" onclick="daySelected(9); showGuess()">9</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">10</button>
+                    <button class="btn btn-2" onclick="daySelected(10); showGuess()">10</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">11</button>
+                    <button class="btn btn-2" onclick="daySelected(11); showGuess()">11</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">12</button>
+                    <button class="btn btn-2" onclick="daySelected(12); showGuess()">12</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">13</button>
+                    <button class="btn btn-2" onclick="daySelected(13); showGuess()">13</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">14</button>
+                    <button class="btn btn-2" onclick="daySelected(14); showGuess()">14</button>
                 </div>
                 
             </div>
             <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-3">
                 <div class="col-1">
-                    <button class="btn btn-2">15</button>
+                    <button class="btn btn-2" onclick="daySelected(15); showGuess()">15</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">16</button>
+                    <button class="btn btn-2" onclick="daySelected(16); showGuess()">16</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">17</button>
+                    <button class="btn btn-2" onclick="daySelected(17); showGuess()">17</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">18</button>
+                    <button class="btn btn-2" onclick="daySelected(18); showGuess()">18</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">19</button>
+                    <button class="btn btn-2" onclick="daySelected(19); showGuess()">19</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">20</button>
+                    <button class="btn btn-2" onclick="daySelected(20); showGuess()">20</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">21</button>
+                    <button class="btn btn-2" onclick="daySelected(21); showGuess()">21</button>
                 </div>
                 
             </div>
             <div class="row" style="width: 103vw; transform: translate(20vw); display: none" id="dater-4">
                 <div class="col-1">
-                    <button class="btn btn-2">22</button>
+                    <button class="btn btn-2" onclick="daySelected(22); showGuess()">22</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">23</button>
+                    <button class="btn btn-2" onclick="daySelected(23); showGuess()">23</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">24</button>
+                    <button class="btn btn-2" onclick="daySelected(24); showGuess()">24</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">25</button>
+                    <button class="btn btn-2" onclick="daySelected(25); showGuess()">25</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">26</button>
+                    <button class="btn btn-2" onclick="daySelected(26); showGuess()">26</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">27</button>
+                    <button class="btn btn-2" onclick="daySelected(27); showGuess()">27</button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-2">28</button>
+                    <button class="btn btn-2" onclick="daySelected(28); showGuess()">28</button>
                 </div>
                 
             </div>
 
             <div class="row" style="width: 103vw; transform: translate(20vw);">
                 <div class="col-1" id="date-29" style="display: none">
-                    <button class="btn btn-2" >29</button>
+                    <button class="btn btn-2" onclick="daySelected(29); showGuess()">29</button>
                 </div>
                 <div class="col-1" id="date-30" style="display: none">
-                    <button class="btn btn-2">30</button>
+                    <button class="btn btn-2" onclick="daySelected(30); showGuess()">30</button>
                 </div>
                 <div class="col-1" id="date-31" style="display: none">
-                    <button class="btn btn-2">31</button>
+                    <button class="btn btn-2" onclick="daySelected(31); showGuess()">31</button>
                 </div>
                 
             </div>
             <br>
+
+            <!-- your current guess -->
+            <p style="color: red">Your current guess is: <span id="guessShown" style="font-weight: bold"></span></p>
+
             <!-- buttons at end -->
             <div class="row main1-section profile m-auto" style="justify-content: center;">
-                <button class="btn btn-1" style="width: 25vw; transform: translate(-5vh)">Confirm</button>
+                <button class="btn btn-1" style="width: 25vw; transform: translate(0vh)">Confirm</button>
                 <button onclick="next('date')" class="btn btn-1" style="width: 25vw; transform: translate(5vh)">Next</button>
             </div>
 
@@ -328,10 +326,16 @@
     <br><br>
 
     <br>
+
+    <!-- your current guess -->
+    <p style="color: red">Your current guess is: <span id="guessShown2" style="font-weight: bold"></span></p>
+
+
     <!-- buttons at end -->
     <div class="row main1-section profile m-auto" style="justify-content: center;">
-        <button class="btn btn-1" style="width: 25vw; transform: translate(-5vh)">Confirm</button>
-        <button onclick="next('date')" class="btn btn-1" style="width: 25vw; transform: translate(5vh)">Next</button>
+        <button onclick="back('time')" class="btn btn-1" style="width: 25vw; transform: translate(-10vh)">Back</button>
+        <button class="btn btn-1" style="width: 25vw; transform: translate(0vh)">Confirm</button>
+        <button onclick="next('time')" class="btn btn-1" style="width: 25vw; transform: translate(10vh)">Next</button>
     </div>
 
     

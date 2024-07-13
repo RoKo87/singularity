@@ -1,4 +1,41 @@
+var guessTime = [2050, "January", 1, 0, 0, 0, 0]
+
+
+
+function daySelected(date) {
+    guessTime[2] = date;
+}
+
+function showGuess() {
+    let minSlot = guessTime[4] < 10 ? "0" + guessTime[4] : "" + guessTime[4];
+    let secSlot = guessTime[5] < 10 ? "0" + guessTime[5] : "" + guessTime[5];
+    let milliSlot = guessTime[6] < 100 ? guessTime[6] : "" + guessTime[6];
+    if (guessTime[6] < 10) milliSlot = "00" + milliSlot 
+    else milliSlot = "0" + milliSlot
+
+    setText("guessShown", "" + guessTime[2] + " " + guessTime[1] + ", " + guessTime[0] + " at " + guessTime[3] + ":" + minSlot + ":" + secSlot + "." + milliSlot)
+    setText("guessShown2", "" + guessTime[2] + " " + guessTime[1] + ", " + guessTime[0] + " at " + guessTime[3] + ":" + minSlot + ":" + secSlot + "." + milliSlot)
+}
 function showDates () {
+    guessTime[0] = getValue("year_input");
+
+    switch (getValue("month_input")) {
+        case "0": break;
+        case "1": guessTime[1] = "January"; break;
+        case "2": guessTime[1] = "February"; break;
+        case "3": guessTime[1] = "March"; break;
+        case "4": guessTime[1] = "April"; break;
+        case "5": guessTime[1] = "May"; break;
+        case "6": guessTime[1] = "June"; break;
+        case "7": guessTime[1] = "July"; break;
+        case "8": guessTime[1] = "August"; break;
+        case "9": guessTime[1] = "September"; break;
+        case "10": guessTime[1] = "October"; break;
+        case "11": guessTime[1] = "November"; break;
+        case "12": guessTime[1] = "December"; break;
+        default: break;
+    }
+    
     hideElement("dater-1");
     hideElement("dater-2");
     hideElement("dater-3");
