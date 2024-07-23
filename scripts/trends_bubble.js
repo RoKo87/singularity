@@ -538,16 +538,26 @@ class Date {
     
         return true; // No overlapping bubbles found
     }
+
+    isCollide(a) {
+        for (let i = 0; i < Date.currentBubbles.length; i++) {
+            var existingBubble = Date.currentBubbles[i];
+            if ( (((a.y + a.height) < (existingBubble.y)) || (a.y > (existingBubble.y + existingBubble.height)) || ((a.x + a.width) < existingBubble.x) || (a.x > (existingBubble.x + existingBubble.width))) ) {
+                return true;
+            }
+        return false;
+    }
     
+    }
     
 
     showBubble(position) {
 
-        while (!this.checkBubbles(position)) {
+        while (this.isCollide(this)) {
             position = randomPosition(100);
         }
 
-        this.checkBubbles(position);
+        this.isCollide(this);
         var element = document.getElementById('bubbles');
         var bubble = document.createElement('div');
         element.appendChild(bubble);
@@ -555,8 +565,8 @@ class Date {
         Date.currentBubbles.unshift(bubble);
 
         bubble.innerHTML = this.year;
-        bubble.style.left = position.getX() +'px'
-        bubble.style.top = position.getY() +'px'
+        bubble.style.left = position.getX() +'px';
+        bubble.style.top = position.getY() +'px';
 
     }
 }
@@ -814,7 +824,6 @@ function randomizeOccupation() {
 function randomizeYear() {
     return Math.floor(Math.random() * 1000) + 2050;
 }
-
 
 function randomizePeople() {
     var num = Math.random();
