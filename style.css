@@ -622,9 +622,10 @@ body {
     background-color: red;
     border: 1px solid black;
     padding: 5px;
-    /* display: block; Hidden by default */
+    display: block; /* Make sure it's visible */
     z-index: 999;
-    border: 1px solid black;
     width: 100px;
     height: 100px;
+    top: 50px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
 }

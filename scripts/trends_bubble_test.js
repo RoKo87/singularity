@@ -138,9 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Create and configure tooltip
                 const tooltip = document.createElement('div');
                 tooltip.className = 'tooltip';
-                tooltip.style.display = 'block'
                 tooltip.innerHTML = 'Bubble Info'; // Customize this with your info
-                document.body.appendChild(tooltip);
+                bubble.appendChild(tooltip);
 
                 // Add event listeners for tooltip
                 bubble.addEventListener('mouseover', (event) => {
@@ -153,13 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 bubble.addEventListener('mousemove', (event) => {
                     tooltip.style.left = (event.pageX + 10) + 'px';
                     tooltip.style.top = (event.pageY + 10) + 'px';
-                    console.log('chickwn');
+                    console.log('chicken');
                 });
 
-                // bubble.addEventListener('mouseout', () => {
-                //     tooltip.style.display = 'none';
-                //     console.log('tum');
-                // });
+                bubble.addEventListener('mouseout', () => {
+                    tooltip.style.display = 'none';
+                    console.log('tum');
+                });
 
                 // Append bubble to DOM and add to bubbles array
                 document.getElementById('bubbles').appendChild(bubble);
