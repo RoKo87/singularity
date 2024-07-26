@@ -629,3 +629,13 @@ body {
     top: 50px; /* Adjust as needed */
     left: 50px; /* Adjust as needed */
 }
+
+
+.singularity-blue {
+    background-color: #D3EFFF;
+}
+
+.profile-item:hover {
+    background-color: #63D0FF;
+    cursor: pointer;
+}
