@@ -596,30 +596,6 @@ body {
 /* ################################################################################################################################ */
 /* ################################################################################################################################ */
 
-.bubble_trends {
-    height: 100px;
-    width: 100px;
-    position: sticky;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;    /* Centers vertically */
-    text-align: center;
-}
-
-.bubble_trends::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #ACE6FF;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); /* Adds a blue shadow for a glowing effect */
-    filter: blur(2px); /* Applies a blur effect */
-    z-index: -1; /* Places the pseudo-element behind the text */
-}
-
 .container.trends {
     height: 100%;
     width: 100%;
@@ -627,4 +603,29 @@ body {
 
 #bubbles {
     height: 100vh;
+}
+
+.bubble-trends {
+    background-color: lightblue;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px; /* Match the height to center the text */
+    font-size: 12px;
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: red;
+    border: 1px solid black;
+    padding: 5px;
+    display: block; /* Make sure it's visible */
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    top: 50px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
 }
