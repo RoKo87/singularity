@@ -31,22 +31,22 @@
                 </div>
 
                 <div class="row border-bottom flex-grow-0">
-                    <button class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Your Info</button>
+                    <button onclick="move('your-info')" id="your-info-button" class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Your Info</button>
                 </div>
                 <div class="row border-bottom flex-grow-0">
-                    <button class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Friends Dashboard</button>
+                    <button onclick="move('friends')" id="friends-button" class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Friends Dashboard</button>
                 </div>
                 <div class="row border-bottom flex-grow-0">
-                    <button class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Profile Settings</button>
+                    <button onclick="move('profile')" id="profile-button" class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Profile Settings</button>
                 </div>
                 <div class="row border-bottom flex-grow-0">
-                    <button class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Privacy Settings</button>
+                    <button onclick="move('privacy')" id="privacy-button" class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Privacy Settings</button>
                 </div>
                 <div class="row border-bottom flex-grow-0">
-                    <button class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">My Guesses</button>
+                    <button onclick="move('guesses')" id="guesses-button" class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">My Guesses</button>
                 </div>
                 <div class="row border-bottom flex-grow-0">
-                    <button class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Advanced</b>
+                    <button onclick="move('advanced')" id="advanced-button" class="border-0 text-center profile-item singularity-blue fw-bold fs-5 p-5">Advanced</b>
                 </div>
 
 
@@ -59,15 +59,15 @@
 
 
 
-            <div class="col-9"> 
-                <div class="row mb-5">
+            <div class="col-9 overflow-x-hidden"> 
+                <div class="row">
                     <div class="w-50 m-auto mt-5 mb-5"><img src="logos/logo2.png" style="object-fit: contain;" alt="Oops, the logo image failed to load."></div>
                 </div>
 
 
-                <div class="row w-75 m-auto mt-5">
+                <div id="your-info" class="row w-75 m-auto user-stuff current">
                     
-                    <div class="mb-5">
+                    <div class="mb-4">
                         <div><b>Description</b></div>
                         <textarea id="description-profile" class="w-100 border border-black p-1 rounded" rows="5" placeholder="Edit description..." required></textarea>
 
@@ -77,15 +77,116 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="mb-4">
                         <div class="fw-bold">Age</div>
-                        <input id="date" class="rounded border border-black w-100 p-1" id="age" type="date">
+                        <input id="date" class="rounded border border-black w-100 p-1" type="date">
 
                         <div class="mt-2">
                             <button class="description-button profile" onclick="saveDate('date')"> Save </button>
                             <button class="description-button profile"  onclick="resetDate('date')"> Reset </button>
                         </div>
                     </div>
+
+                    <div class="mb-4">
+                        <div class="fw-bold">Location</div>
+                        <input id="location" class="rounded border border-black w-100 p-1" placeholder="Edit location">
+
+                        <div class="mt-2">
+                            <button class="description-button profile" onclick="saveDate('location')"> Save </button>
+                            <button class="description-button profile"  onclick="resetDate('location')"> Reset </button>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="fw-bold">Occupation</div>
+                        <input id="occupation" class="rounded border border-black w-100 p-1" placeholder="Edit occupation">
+
+                        <div class="mt-2">
+                            <button class="description-button profile" onclick="saveDate('occupation')"> Save </button>
+                            <button class="description-button profile"  onclick="resetDate('occupation')"> Reset </button>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="fw-bold">Education</div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              High School Dropout
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                High School Graduate or GED Equivalent
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Vocational or Technical Training
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Associate's Degree (Two-Year Degree)
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Bachelor's Degree (Four-Year Degree)
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Master's Degree
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Doctorate or Ph.D
+                            </label>
+                          </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div id="friends" class="row w-75 m-auto user-stuff">
+
+                    <h1>FRIENDS</h1>
+
+                </div>
+
+                <div id="profile" class="row w-75 m-auto user-stuff">
+
+                    <h1>PROFILE</h1>
+
+                </div>
+
+                <div id="privacy" class="row w-75 m-auto user-stuff">
+
+                    <h1>PRIVACY</h1>
+
+                </div>
+
+                <div id="guesses" class="row w-75 m-auto user-stuff">
+
+                    <h1>MY GUESSES</h1>
+
+                </div>
+
+                <div id="advanced" class="row w-75 m-auto user-stuff">
+
+                    <h1>ADVANCED</h1>
 
                 </div>
             </div>

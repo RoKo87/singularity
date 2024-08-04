@@ -40,3 +40,26 @@ function resetDate(id) {
     var dateInput = document.getElementById(id)
     dateInput.value = savedDate
 }
+
+
+// addEventListener("DOMContentLoaded", (event) => {
+
+//     move('your-info')
+    
+
+// });
+
+function move(id) {
+    current = document.getElementsByClassName('current')[0]
+    if (document.getElementById(id) == current) {
+        console.log('nothing changes');
+        return
+    }
+    
+    current.classList.remove('current')
+    console.log(current.classList);
+
+    document.getElementById(id).classList.add('current')
+}
+
+
