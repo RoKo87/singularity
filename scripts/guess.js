@@ -4,6 +4,23 @@ var guessTime = [2050, "January", 1, 0, 0, 0, 0]
 
 function daySelected(date) {
     guessTime[2] = date;
+    showGuess()
+}
+
+var isPM = false; 
+
+function hourSelected(hour) {
+    setText("defText", ".");
+    var given = (hour == 12) ? 0 : hour;
+    if (isPM) given += 12;
+    guessTime[3] = given;
+    showGuess()
+}
+
+function ampmSelected(pm) {
+    isPM = pm;
+    console.log(pm);
+    hourSelected((guessTime[3] - 1) % 12 + 1);
 }
 
 function showGuess() {
@@ -11,12 +28,14 @@ function showGuess() {
     let secSlot = guessTime[5] < 10 ? "0" + guessTime[5] : "" + guessTime[5];
     let milliSlot = guessTime[6] < 100 ? guessTime[6] : "" + guessTime[6];
     if (guessTime[6] < 10) milliSlot = "00" + milliSlot 
-    else milliSlot = "0" + milliSlot
+    else if (guessTime[6] < 100) milliSlot = "0" + milliSlot
 
     setText("guessShown", "" + guessTime[2] + " " + guessTime[1] + ", " + guessTime[0] + " at " + guessTime[3] + ":" + minSlot + ":" + secSlot + "." + milliSlot)
     setText("guessShown2", "" + guessTime[2] + " " + guessTime[1] + ", " + guessTime[0] + " at " + guessTime[3] + ":" + minSlot + ":" + secSlot + "." + milliSlot)
+    setText("theGuess", "" + guessTime[2] + " " + guessTime[1] + ", " + guessTime[0] + " at " + guessTime[3] + ":" + minSlot + ":" + secSlot + "." + milliSlot)
 }
 function showDates () {
+    setText("defText", ".");
     guessTime[0] = getValue("year_input");
 
     switch (getValue("month_input")) {
@@ -83,7 +102,7 @@ function isLeapYearNum(x) {
 }
 
 //page movement
-var pages = ['date', 'time'];
+var pages = ['date', 'time', 'confirm', 'ending'];
 
 function next(id) {
     var page = document.getElementById(id);
@@ -150,13 +169,23 @@ function back(id) {
 
 // update the value shown when slider is drawn.
 function minsliderupdate() {
+    setText("defText", ".");
     setText("min-show", getValue("min-slider"))
+    guessTime[4] = getValue("min-slider");
+    showGuess()
+
 }
 
 function secsliderupdate() {
+    setText("defText", ".");
     setText("sec-show", getValue("sec-slider"))
+    guessTime[5] = getValue("sec-slider");
+    showGuess()
 }
 
 function millisliderupdate() {
+    setText("defText", ".");
     setText("milli-show", getValue("milli-slider"))
+    guessTime[6] = getValue("milli-slider");
+    showGuess()
 }
